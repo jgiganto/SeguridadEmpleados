@@ -229,6 +229,8 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\pruebas.cshtml" />
+    <Content Include="Views\Validacion\Login.cshtml" />
+    <Content Include="Views\Validacion\ErrorAcceso.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
