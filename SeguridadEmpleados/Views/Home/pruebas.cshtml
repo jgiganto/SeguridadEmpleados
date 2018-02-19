@@ -1,0 +1,75 @@
+﻿@model IEnumerable<SeguridadEmpleados.Models.EMP>
+
+@{
+    ViewBag.Title = "pruebas";
+}
+
+<h2>pruebas</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EMP_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.APELLIDO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OFICIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FECHA_ALT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SALARIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COMISION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEPT_NO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMP_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.APELLIDO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OFICIO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DIR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FECHA_ALT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SALARIO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COMISION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEPT_NO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

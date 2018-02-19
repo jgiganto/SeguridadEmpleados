@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SeguridadEmpleados.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,11 @@ namespace SeguridadEmpleados.Controllers
 {
     public class HomeController : Controller
     {
+        ModeloEmpleados modelo;
+        public HomeController()
+        {
+            modelo = new ModeloEmpleados();
+        }
         public ActionResult Index()
         {
             return View();
@@ -25,6 +31,12 @@ namespace SeguridadEmpleados.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        public ActionResult pruebas()
+        {
+
+            List<EMP> lista = modelo.GetEmpleados();
+            return View(lista);
         }
     }
 }
