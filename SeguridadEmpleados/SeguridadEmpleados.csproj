@@ -149,6 +149,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ValidacionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -172,6 +173,7 @@
     </Compile>
     <Compile Include="Models\Empleados.cs" />
     <Compile Include="Models\ModeloEmpleados.cs" />
+    <Compile Include="Models\ValidateUsers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -183,8 +185,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Models\ContextoEmpleados.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ContextoEmpleados.Context.cs</LastGenOutput>
       <DependentUpon>ContextoEmpleados.edmx</DependentUpon>
+      <LastGenOutput>ContextoEmpleados.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\ContextoEmpleados.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -228,9 +230,9 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\pruebas.cshtml" />
     <Content Include="Views\Validacion\Login.cshtml" />
     <Content Include="Views\Validacion\ErrorAcceso.cshtml" />
+    <Content Include="Views\Home\pruebas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
