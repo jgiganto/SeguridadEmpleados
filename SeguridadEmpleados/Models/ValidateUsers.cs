@@ -20,16 +20,13 @@ namespace SeguridadEmpleados.Models
             List<EMP> emp = modelo.GetEmpleados();
             foreach(var usuario in emp)
             {
-                if((usuario.APELLIDO==apellido && usuario.EMP_NO == empno) &&
-                    (usuario.OFICIO=="PRESIDENTE"||usuario.OFICIO== "DIRECTOR"))
+                if((usuario.APELLIDO==apellido.ToUpper() && usuario.EMP_NO == empno) &&
+                    (usuario.OFICIO=="PRESIDENTE"||usuario.OFICIO == "DIRECTOR"))
                 {
-                    this.Role = "AMDMINISTRADOR";
+                    this.Role = "ADMINISTRADOR";
                     return true;
                 }
-                else
-                {
-                    return false;
-                }
+                
             }
             return false;
         }

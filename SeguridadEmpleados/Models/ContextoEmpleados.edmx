@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="HOSPITALModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ModeloHospital.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="EMP">
           <Key>
             <PropertyRef Name="EMP_NO" />
@@ -18,14 +18,14 @@
           <Property Name="COMISION" Type="int" />
           <Property Name="DEPT_NO" Type="int" />
         </EntityType>
-        <EntityContainer Name="HOSPITALModelStoreContainer">
+        <EntityContainer Name="ModeloHospitalStoreContainer">
           <EntitySet Name="EMP" EntityType="Self.EMP" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="HOSPITALModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="ModeloHospital" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="EMP">
           <Key>
             <PropertyRef Name="EMP_NO" />
@@ -47,9 +47,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="HOSPITALModelStoreContainer" CdmEntityContainer="ContextoEmpleados">
+        <EntityContainerMapping StorageEntityContainer="ModeloHospitalStoreContainer" CdmEntityContainer="ContextoEmpleados">
           <EntitySetMapping Name="EMP">
-            <EntityTypeMapping TypeName="HOSPITALModel.EMP">
+            <EntityTypeMapping TypeName="ModeloHospital.EMP">
               <MappingFragment StoreEntitySet="EMP">
                 <ScalarProperty Name="EMP_NO" ColumnName="EMP_NO" />
                 <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />

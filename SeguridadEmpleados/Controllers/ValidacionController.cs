@@ -21,21 +21,21 @@ namespace SeguridadEmpleados.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Login(String apellido, int empno)
+        public ActionResult Login(String apellido, int? empno)
         {
             ValidateUsers validacion = new ValidateUsers();
-            if(validacion.ExisteUsuario(apellido,empno))
+            if(validacion.ExisteUsuario(apellido,empno.GetValueOrDefault()))
             {
                 FormsAuthenticationTicket ticket =
                     new FormsAuthenticationTicket(1, apellido, DateTime.Now,
-                    DateTime.Now.AddSeconds(30), true, validacion.Role,
+                    DateTime.Now.AddSeconds(90), true, validacion.Role,
                     FormsAuthentication.FormsCookiePath);
 
                 String ticketcifrado = FormsAuthentication.Encrypt(ticket);
 
                 HttpCookie cookie = new HttpCookie("cookieusuario", ticketcifrado);
                 Response.Cookies.Add(cookie);
-                return RedirectToAction("Index", "Administracion");
+                return RedirectToAction("Index", "ZonaSegura");
             }
             else
             {
