@@ -30,11 +30,12 @@ namespace SeguridadEmpleados.Controllers
                     new FormsAuthenticationTicket(1, apellido, DateTime.Now,
                     DateTime.Now.AddSeconds(90), true, validacion.Role,
                     FormsAuthentication.FormsCookiePath);
-
+                
                 String ticketcifrado = FormsAuthentication.Encrypt(ticket);
 
                 HttpCookie cookie = new HttpCookie("cookieusuario", ticketcifrado);
                 Response.Cookies.Add(cookie);
+
                 return RedirectToAction("Index", "ZonaSegura");
             }
             else

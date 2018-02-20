@@ -2,6 +2,70 @@
 @{
     ViewBag.Title = "Index";
 }
+@model IEnumerable<SeguridadEmpleados.Models.EMP>
 
-<h2>Has Entrado en la zona protegida!!!!!!!</h2>
 
+@{
+    if (HttpContext.Current.User.IsInRole("PRESIDENTE") == true)
+    {
+        <h1 style="color:palevioletred">BIENVENIDO PRESIDENTE</h1>
+
+        <table class="table">
+            <tr>
+               
+                <th>
+                    @Html.DisplayNameFor(model => model.APELLIDO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OFICIO)
+                </th>
+                
+                
+                <th>
+                    @Html.DisplayNameFor(model => model.SALARIO)
+                </th>
+             
+              
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                  
+                    <td>
+                        @Html.DisplayFor(modelItem => item.APELLIDO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OFICIO)
+                    </td>
+                  
+              
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SALARIO)
+                    </td>
+                  
+                 
+                    <td>
+                        @Html.ActionLink("Editar", "Edit","ZonaSegura", new {
+                       id =item.EMP_NO,
+                       apellido = item.APELLIDO,
+                       oficio = item.OFICIO,
+                       salario = item.SALARIO
+                   },null) 
+                     
+                    </td>
+                </tr>
+            }
+
+        </table>
+    }
+    if (HttpContext.Current.User.IsInRole("DIRECTOR") == true)
+    {
+        <h1 style="color:palevioletred">BIENVENIDO DIRECTOR</h1>
+    }
+    if (HttpContext.Current.User.IsInRole("ANALISTA") == true)
+    {
+        <h1 style="color:palevioletred">BIENVENIDO ANALISTA</h1>
+    }
+}

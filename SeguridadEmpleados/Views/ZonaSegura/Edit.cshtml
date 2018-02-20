@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Editar empleado</h2> <h1 style="color:blueviolet"> @ViewBag.Apellido</h1>
+
+                         <form method="post">
+                             <label>Apellido</label> <br /><input type="text" name="apellido" value="@ViewBag.Apellido" /> <br />
+                             <label>Oficio</label> <br /><input type="text" name="oficio" value="@ViewBag.Oficio" /><br />
+                             <label>Salario</label> <br /><input type="text" name="salario" value="@ViewBag.Salario" /><br /><br />
+                             <button type="submit">Modificar</button>
+                         </form>
+
+
+
+@Html.ActionLink("Volver","Index","ZonaSegura",null)
+

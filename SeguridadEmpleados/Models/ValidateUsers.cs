@@ -21,12 +21,24 @@ namespace SeguridadEmpleados.Models
             foreach(var usuario in emp)
             {
                 if((usuario.APELLIDO==apellido.ToUpper() && usuario.EMP_NO == empno) &&
-                    (usuario.OFICIO=="PRESIDENTE"||usuario.OFICIO == "DIRECTOR"))
+                    (usuario.OFICIO=="PRESIDENTE"))
                 {
-                    this.Role = "ADMINISTRADOR";
+                    this.Role = "PRESIDENTE";
                     return true;
                 }
-                
+                if ((usuario.APELLIDO == apellido.ToUpper() && usuario.EMP_NO == empno) &&
+                   (usuario.OFICIO == "DIRECTOR"))
+                {
+                    this.Role = "DIRECTOR";
+                    return true;
+                }
+                if ((usuario.APELLIDO == apellido.ToUpper() && usuario.EMP_NO == empno) &&
+                   (usuario.OFICIO == "ANALISTA"))
+                {
+                    this.Role = "ANALISTA";
+                    return true;
+                }
+
             }
             return false;
         }

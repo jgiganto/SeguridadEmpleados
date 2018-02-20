@@ -20,7 +20,7 @@ namespace SeguridadEmpleados.Atributos
             {
                 GenericPrincipal usuario =
                     HttpContext.Current.User as GenericPrincipal;
-                if (usuario.IsInRole("ADMINISTRADOR") == false)
+                if (usuario.IsInRole("PRESIDENTE") == false && usuario.IsInRole("DIRECTOR") == false && usuario.IsInRole("ANALISTA") == false)
                 {
                     RouteValueDictionary rutaacceso =
                         new RouteValueDictionary(new

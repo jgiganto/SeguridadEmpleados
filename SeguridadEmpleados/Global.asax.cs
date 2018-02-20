@@ -29,10 +29,13 @@ namespace SeguridadEmpleados
                 FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(datoscookie);
                 String nombreusuario = ticket.Name;
                 String grupousuario = ticket.UserData;
+                 
                 GenericIdentity identidad = new GenericIdentity(nombreusuario);
                 GenericPrincipal usuario =  
                     new GenericPrincipal(identidad, new string[] { grupousuario });
                 HttpContext.Current.User = usuario;
+
+                
             }
         }
     }
